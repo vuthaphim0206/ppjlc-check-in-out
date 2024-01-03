@@ -8,8 +8,8 @@ const Home = () => {
         <div className=" w-full">
           <div className="flex justify-center gap-3 mt-5">
             <Image
-              src="/img/kfhi.png"
-              alt="ppjlc logo"
+              src="img/KFHI.png"
+              alt="KFHI Logo"
               width={236}
               height={0}
               className="mt-5"
@@ -25,7 +25,7 @@ const Home = () => {
           <h1 className="font-sans font-medium text-4xl sm:text-5xl text-center text-green-800 mt-3 mb-10">
             PPJLC Dormitory
           </h1>
-          <hr className="bg-pink-700 border-pink-700 border-2"/>
+          <hr className="bg-pink-700 border-pink-700 border-2 rounded-xl w-64 m-auto"/>
         </div>
 
         <MyForm />

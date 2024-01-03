@@ -63,21 +63,22 @@ const MyForm = () => {
           onSubmit={handleFormSubmit}
           className="bg-pink-400 drop-shadow-xl w-5/6 sm:w-2/3 m-auto mt-5 p-5 rounded-t-2xl"
         >
-          <h2 className="text-xl sm:text-2xl text-green-800 font-serif font-medium mb-3">
+          <h2 className="text-xl sm:text-2xl text-green-800 font-serif font-semibold mb-3">
             Check-In & Check-Out Form
           </h2>
           <div className="mb-4">
-          <label htmlFor="nameOption" className="block text-gray-700 font-sans ">
-              Departure or Arrival?
-            </label>
+          <label htmlFor="nameOption" className="block text-black font-medium font-sans ">
+              Departure, Arrival or Late?
+          </label>
             <select value={nameOption}
               
               onChange={(e) => setNameOption(e.target.value)}
               className="w-full px-3 py-2 mt-1 text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               required>
               <option>please select option...</option>
-              <option>Departure</option>
-              <option>Arrival</option>
+              <option>1. Departure</option>
+              <option>2. Arrival</option>
+              <option>3. Late Night</option>
             </select>
           </div>
           {/* <div className="mb-4">
@@ -94,7 +95,7 @@ const MyForm = () => {
             />
           </div> */}
           <div className="mb-4">
-            <label htmlFor="fullName" className="block text-gray-700 font-sans ">
+            <label htmlFor="fullName" className="block text-black font-medium font-sans ">
               Full Name
             </label>
             <input
@@ -109,7 +110,7 @@ const MyForm = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="date" className="block text-gray-700 font-sans ">
+            <label htmlFor="date" className="block text-black font-medium font-sans ">
               Pick Date
             </label>
             <DatePicker
@@ -123,7 +124,7 @@ const MyForm = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="timeOut" className="block text-gray-700 font-sans ">
+            <label htmlFor="timeOut" className="block text-black font-medium font-sans ">
               Pick Time
             </label>
             <input
@@ -169,12 +170,12 @@ const MyForm = () => {
           </div> */}
 
           <div className="mb-4">
-            <label htmlFor="comment" className="block text-gray-700 font-sans">
+            <label htmlFor="comment" className="block text-black font-medium font-sans">
               Detail:
             </label>
             <textarea
               id="comment"
-              placeholder="please provide more detail about your Departure/Arrival..."
+              placeholder="please provide more details following the option you've selected..."
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               className=" w-full px-3 py-2 mt-1 text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
