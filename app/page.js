@@ -8,7 +8,7 @@ const Home = () => {
         <div className=" w-full">
           <div className="flex justify-center gap-3 mt-5">
             <Image
-              src="img/KFHI.png"
+              src="/img/kfhi.png"
               alt="KFHI Logo"
               width={236}
               height={0}
