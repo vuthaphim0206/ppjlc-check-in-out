@@ -61,10 +61,10 @@ const MyForm = () => {
       <div>
         <form
           onSubmit={handleFormSubmit}
-          className="bg-pink-400 drop-shadow-xl w-5/6 sm:w-2/3 m-auto mt-5 p-5 rounded-t-2xl"
+          className="bg-white drop-shadow-2xl w-5/6 sm:w-2/3 m-auto mt-8 sm:p-8 p-5 rounded-t-2xl"
         >
-          <h2 className="text-xl sm:text-2xl text-green-800 font-serif font-semibold mb-3">
-            Check-In & Check-Out Form
+          <h2 className="text-lg sm:text-3xl text-pink-600 font-serif font-semibold mb-3">
+            Check In-Out Form
           </h2>
           <div className="mb-4">
           <label htmlFor="nameOption" className="block text-black font-medium font-sans ">
@@ -186,10 +186,11 @@ const MyForm = () => {
 
           <button
             type="submit"
-            className="mb-5 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+            className="mb-5 px-4 py-2 text-white bg-blue-600 rounded hover:bg-pink-700"
           >
             Submit
           </button>
+          <div className="bg-pink-700 text-center text-white drop-shadow-md p-3 mb-3 mt-3 text-xl sm:text-2xl rounded-md">May God Bless You!</div>
         </form>
       </div>
   );
