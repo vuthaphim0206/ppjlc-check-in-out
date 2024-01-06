@@ -16,69 +16,87 @@ const MyForm = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Format the data to be sent to the Telegram bot
-    const message = `
-    Full Name: ${fullName.toUpperCase()}
-     -Type: ${nameOption}
-     -Date: ${date.toDateString(new Date())}
-     -Time: ${timeOut}
-     -----------------------------
-    Comment: ${comment}
-    `;
-    // Arrival Date: ${arrivalDate.toDateString(new Date())}
-     // Time: ${timeIn}
-
-    // Set your Telegram bot token and chat ID
-    const botToken = "6522729915:AAEn3xO0gDpzcUPznx4gewhcT56bUKKTrnc";
-    const chatId = "-1002072072352";
-
-    // Send the message to the Telegram bot
-    axios
-      .post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        chat_id: chatId,
-        text: message,
-      })
-      .then((response) => {
-        // Handle the response if needed
-        console.log(response.data);
-      })
-      .catch((error) => {
-        // Handle errors if any
-        console.error(error);
-      });
+    let chatId;
+    if (nameOption === "4. Kitchen Cleaning" || "5. Bathroom Cleaning") {
+      // Set your Telegram bot token and chat ID for Cleaning option
+      const botTokenCleaning = "6183309812:AAH-cWBHOUiXWPEyU72nlafzOojW8rhEWeI";
+      chatId = "-4089040065";
+      
+      // Send the message to the Telegram bot for Cleaning option
+      axios
+        .post(`https://api.telegram.org/bot${botTokenCleaning}/sendMessage`, {
+          chat_id: chatId,
+          text: createTelegramMessage(),
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } else {
+      // Set your Telegram bot token and chat ID
+      const botToken = "6522729915:AAEn3xO0gDpzcUPznx4gewhcT56bUKKTrnc";
+      chatId = "-1002072072352";
+      
+      // Send the message to the Telegram bot
+      axios
+        .post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          chat_id: chatId,
+          text: createTelegramMessage(),
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
 
     // Reset the form fields after submission
     setNameOption("");
     setFullName("");
     setDate(new Date());
-    // setArrivalDate(new Date());
     setTimeOut("");
-    // setTimeIn("");
     setComment("");
+  };
+
+  const createTelegramMessage = () => {
+    const message = `
+      Full Name: ${fullName.toUpperCase()}
+      -Type: ${nameOption}
+      -Date: ${date.toDateString(new Date())}
+      -Time: ${timeOut}
+      -----------------------------
+      Comment: ${comment}
+    `;
+    return message;
   };
 
   return (
       <div>
         <form
           onSubmit={handleFormSubmit}
-          className="bg-white drop-shadow-2xl w-5/6 sm:w-2/3 m-auto mt-8 sm:p-8 p-5 rounded-t-2xl"
+          className="bg-white drop-shadow-2xl w-5/6 sm:w-2/3 m-auto mt-5 sm:p-8 p-5 rounded-t-2xl"
         >
           <h2 className="text-lg sm:text-3xl text-pink-600 font-serif font-semibold mb-3">
-            Check In-Out Form
+            Thanks for Cooperation!🫶
           </h2>
           <div className="mb-4">
           <label htmlFor="nameOption" className="block text-black font-medium font-sans ">
-              Departure, Arrival or Late?
+              Please choose an option
           </label>
             <select value={nameOption}
               
               onChange={(e) => setNameOption(e.target.value)}
               className="w-full px-3 py-2 mt-1 text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               required>
-              <option>please select option...</option>
+              <option>option...</option>
               <option>1. Departure</option>
               <option>2. Arrival</option>
               <option>3. Late Night</option>
+              <option>4. Kitchen Cleaning</option>
+              <option>5. Bathroom Cleaning</option>
             </select>
           </div>
           {/* <div className="mb-4">

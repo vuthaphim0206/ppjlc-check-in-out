@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <link rel="icon" href="/img/ppjlc.png" />
       {/* <body className={inter.className}>{children}</body> */}
-      <body className="absolute bg-pink-700 w-full m-auto ">
+      <body className="absolute bg-slate-700 w-full m-auto ">
         {children}
       </body>
     </html>
