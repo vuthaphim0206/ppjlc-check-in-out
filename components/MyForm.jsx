@@ -17,7 +17,7 @@ const MyForm = () => {
     e.preventDefault();
 
     let chatId;
-    if (nameOption === "4. Kitchen Cleaning" || "5. Bathroom Cleaning") {
+    if (nameOption === "4. Kitchen Cleaning") {
       // Set your Telegram bot token and chat ID for Cleaning option
       const botTokenCleaning = "6183309812:AAH-cWBHOUiXWPEyU72nlafzOojW8rhEWeI";
       chatId = "-4089040065";
@@ -34,7 +34,26 @@ const MyForm = () => {
         .catch((error) => {
           console.error(error);
         });
-    } else {
+    } 
+    else if (nameOption === "5. Bathroom Cleaning") {
+      // Set your Telegram bot token and chat ID for Cleaning option
+      const botTokenCleaning = "6183309812:AAH-cWBHOUiXWPEyU72nlafzOojW8rhEWeI";
+      chatId = "-4089040065";
+      
+      // Send the message to the Telegram bot for Cleaning option
+      axios
+        .post(`https://api.telegram.org/bot${botTokenCleaning}/sendMessage`, {
+          chat_id: chatId,
+          text: createTelegramMessage(),
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+    else {
       // Set your Telegram bot token and chat ID
       const botToken = "6522729915:AAEn3xO0gDpzcUPznx4gewhcT56bUKKTrnc";
       chatId = "-1002072072352";
