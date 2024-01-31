@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 const MyForm = () => {
   const [nameOption, setNameOption] = useState("");
@@ -71,6 +72,14 @@ const MyForm = () => {
           console.error(error);
         });
     }
+    // Show success message with SweetAlert2
+    Swal.fire({
+      icon: 'success',
+      title: 'Successfully Submitted!',
+      text: 'Thank you for your cooperation!',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'OK',
+    });
 
     // Reset the form fields after submission
     setNameOption("");
