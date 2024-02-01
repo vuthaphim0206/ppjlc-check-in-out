@@ -10,7 +10,7 @@ const Cleaning = () => {
     window.open("https://drive.google.com/file/d/11QWso9vyd6sxKufYGuXIjL7dwin91DG-/view?usp=sharing", "_blank");
   };
   const handleQT = () => {
-    window.open("https://docs.google.com/spreadsheets/d/1viFRtkOiYQTDe5j_suHyGqZGIa0wEFYC3eOW-nHQCt0/edit?usp=sharing", "_blank");
+    window.open("https://docs.google.com/spreadsheets/d/1viFRtkOiYQTDe5j_suHyGqZGIa0wEFYC3eOW-nHQCt0/edit#gid=505184866", "_blank");
   };
 
   return (
