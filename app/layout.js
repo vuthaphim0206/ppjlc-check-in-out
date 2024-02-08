@@ -3,7 +3,7 @@ import "./globals.css";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Dorm In-Out Info",
+  title: "PPJLC Dorm",
   description: "This app is to store student's in-out info...",
 };
 
