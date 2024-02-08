@@ -36,7 +36,7 @@ const Home = () => {
         {showQRImage && (
           <div className="flex justify-center mb-3 bg-slate-700 w-2/3 sm:w-1/4 m-auto py-4 rounded-lg">
             <Image
-              src="/img/qr_code_image.PNG"
+              src="/img/qr_code_image.png"
               alt="Fund QR Code"
               width={200}
               height={200}
