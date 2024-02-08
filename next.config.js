@@ -4,9 +4,9 @@
 const nextConfig = {
   output: 'export',
  distDir: 'dist',
- experimental: {
-    optimizeImages: true,
-  },
+ images: {
+  unoptimized: true,
+},
 }
 
 module.exports = nextConfig;
