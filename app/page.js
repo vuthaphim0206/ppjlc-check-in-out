@@ -1,5 +1,4 @@
 "use client"
-import sampleImage from '/public/img/qr_code_image.PNG'
 import React, { useState } from "react";
 import Cleaning from "@/components/Cleaning";
 import MyForm from "@/components/MyForm";
@@ -26,10 +25,10 @@ const Home = () => {
         <div className="flex items-center justify-center">
           <span className="mr-1 mb-3">{showQRImage ? "⬆️" : "⬇️"}</span>
           <h5
-            className="font-serif font-medium text-xl text-center text-white mb-3 cursor-pointer"
+            className="font-serif font-semibold text-xl text-center text-yellow-300 mb-3 cursor-pointer"
             onClick={handleToggleQRImage}
           >
-            Foundation ABA<span className="text-red-800 text-2xl">'</span>
+            Love Funding, ABA<span className="text-red-800 text-2xl">'</span>
           </h5>
           <span className="ml-1 mb-3">{showQRImage ? "⬆️" : "⬇️"}</span>
         </div>
