@@ -1,13 +1,11 @@
+// next.config.js
 
-/**
- * @type {import('next').NextConfig}
- */
-const nextConfig = {
-  output: 'export',
- distDir: 'dist',
- images: {
-  unoptimized:true,
- }
-}
- 
-module.exports = nextConfig;
+module.exports = {
+  images: {
+    domains: ['example.com'],
+  },
+  experimental: {
+    optimizeImages: true, // Enable image optimization, defaults to true
+    optimizeCss: true, // Enable CSS optimization, defaults to true
+  },
+};
