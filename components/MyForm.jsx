@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const MyForm = () => {
   const [nameOption, setNameOption] = useState("");
@@ -14,10 +14,13 @@ const MyForm = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-  
+
     let chatId;
     let botToken;
-    if (nameOption === "4. Kitchen Cleaning" || nameOption === "5. Bathroom Cleaning") {
+    if (
+      nameOption === "4. Kitchen Cleaning" ||
+      nameOption === "5. Bathroom Cleaning"
+    ) {
       botToken = "6183309812:AAH-cWBHOUiXWPEyU72nlafzOojW8rhEWeI";
       chatId = "-1001907004074";
     } else if (nameOption === "6. Personal QT") {
@@ -27,26 +30,29 @@ const MyForm = () => {
       botToken = "6522729915:AAEn3xO0gDpzcUPznx4gewhcT56bUKKTrnc";
       chatId = "-1002072072352";
     }
-    
+
     const formData = new FormData();
     formData.append("caption", createTelegramMessage());
     formData.append("photo", picture);
-  
+
     axios
-      .post(`https://api.telegram.org/bot${botToken}/sendPhoto?chat_id=${chatId}`, formData)
+      .post(
+        `https://api.telegram.org/bot${botToken}/sendPhoto?chat_id=${chatId}`,
+        formData
+      )
       .then((response) => {
         Swal.fire({
-          icon: 'success',
-          title: 'Successfully Submitted!',
-          text: 'Thank you for your cooperation!',
-          confirmButtonColor: '#3085d6',
-          confirmButtonText: 'OK',
+          icon: "success",
+          title: "Successfully Submitted!",
+          text: "Thank you for your cooperation!",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
         });
       })
       .catch((error) => {
         console.error(error);
       });
-  
+
     setNameOption("");
     setFullName("");
     setDate(new Date());
@@ -54,7 +60,7 @@ const MyForm = () => {
     setComment("");
     setPicture(null);
   };
-  
+
   const createTelegramMessage = () => {
     let message = `
       Full Name: ${fullName.toUpperCase()}
@@ -77,7 +83,10 @@ const MyForm = () => {
           Thanks for Cooperation! 🫶
         </h2>
         <div className="mb-4">
-          <label htmlFor="nameOption" className="block text-black font-medium font-sans">
+          <label
+            htmlFor="nameOption"
+            className="block text-black font-medium font-sans"
+          >
             Please choose an option
           </label>
           <select
@@ -97,7 +106,10 @@ const MyForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="fullName" className="block text-black font-medium font-sans">
+          <label
+            htmlFor="fullName"
+            className="block text-black font-medium font-sans"
+          >
             Full Name
           </label>
           <input
@@ -112,7 +124,10 @@ const MyForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="date" className="block text-black font-medium font-sans">
+          <label
+            htmlFor="date"
+            className="block text-black font-medium font-sans"
+          >
             Pick Date
           </label>
           <DatePicker
@@ -126,7 +141,10 @@ const MyForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="timeOut" className="block text-black font-medium font-sans">
+          <label
+            htmlFor="timeOut"
+            className="block text-black font-medium font-sans"
+          >
             Pick Time
           </label>
           <input
@@ -141,7 +159,10 @@ const MyForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="picture" className="block text-black font-medium font-sans">
+          <label
+            htmlFor="picture"
+            className="block text-black font-medium font-sans"
+          >
             Upload Picture
           </label>
           <input
@@ -154,7 +175,10 @@ const MyForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="comment" className="block text-black font-medium font-sans">
+          <label
+            htmlFor="comment"
+            className="block text-black font-medium font-sans"
+          >
             Detail:
           </label>
           <textarea

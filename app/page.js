@@ -4,6 +4,7 @@ import Cleaning from "@/components/Cleaning";
 import MyForm from "@/components/MyForm";
 import Image from "next/image";
 
+
 const Home = () => {
   const [showQRImage, setShowQRImage] = useState(false);
 
@@ -17,6 +18,7 @@ const Home = () => {
 
   return (
     <div className="bg-slate-500 w-5/6 md:w-2/3 m-auto mt-8 border-2 border-slate-500 rounded-t-2xl">
+      
       <div className="w-full">
         <br />
         <h1 className="font-serif font-semibold text-3xl sm:text-5xl text-center text-white mt-0 mb-5 bg-slate-700 p-5 rounded-t-lg">
@@ -49,6 +51,7 @@ const Home = () => {
       </div>
       <Cleaning />
       <MyForm />
+      
     </div>
   );
 };
