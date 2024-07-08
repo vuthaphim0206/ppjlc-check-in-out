@@ -2,6 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Modal from "./Modal";
+import Image from "next/image";
 
 export default function TelegramForm() {
   const [formData, setFormData] = useState({
