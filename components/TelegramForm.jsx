@@ -72,10 +72,18 @@ export default function TelegramForm() {
     <div>
       <button
         onClick={() => setShowModal(true)}
-        className="flex items-center justify-center m-auto py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        className="flex items-center justify-center m-auto mb-3 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
         Click to show Small Group Form
       </button>
+      <Link href="https://longcelot.github.io/comment/">
+        <button
+          className="flex items-center justify-center m-auto py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-slate-700 hover:text-white bg-yellow-300 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          type="button"
+        >
+          Go to Comment Page
+        </button>
+      </Link>
 
       <Modal show={showModal} onClose={() => setShowModal(false)}>
         <h2 className="text-lg sm:text-3xl text-blue-600 font-serif font-semibold mb-3">
